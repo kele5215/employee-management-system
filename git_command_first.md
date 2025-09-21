@@ -118,3 +118,13 @@ git remote add origin https://github.com/kele5215/employee-management-system.git
 git branch -M main
 git push -u origin main
 ```
+
+### 步骤 6：文件有修改时再提交并推送
+命令如下
+```bash
+git status
+git add git_command_first.md
+git commit -m "update git_command_first.md"
+git push
+```
+或者使用桌面工具
