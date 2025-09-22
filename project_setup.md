@@ -87,6 +87,30 @@ uvicorn main:app --reload --host 0.0.0.0 --port 8000
 
 - API 文档: http://localhost:8000/docs
 - 初始化数据: POST http://localhost:8000/api/init-data
+
+#### Debug启动 用于调试
+✅ PyCharm Debug 配置清单
+1. 打开菜单 Run → Edit Configurations…
+2. 点击左上角 ➕ → 选择 Python
+3. 配置项填写：
+   - Name: FastAPI Debug （随便取）
+     - Script path:
+     ```commandline
+     /Users/gegedl5215/.pyenv/versions/fastapi-env/bin/uvicorn
+     ```
+     - Parameters:
+     ```commandline
+     main:app --reload --host 127.0.0.1 --port 8000
+     ```
+     - Working directory:
+     ```commandline
+     /Users/gegedl5215/Documents/Developer/python_study/employee-management-system/backend
+     ```
+     - Python interpreter:
+     ```commandline
+     选择 fastapi-env 虚拟环境（路径大概是 /Users/gegedl5215/.pyenv/versions/fastapi-env/bin/python）
+     ```
+4. 点 Apply → Debug 🐞
 ---
 
 ### 2. 前端 (Vite + React) 搭建

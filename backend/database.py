@@ -4,6 +4,7 @@
 """
 
 from contextlib import asynccontextmanager
+from typing import Any, AsyncGenerator
 
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
 from sqlalchemy.orm import declarative_base
@@ -33,7 +34,7 @@ AsyncSessionLocal = async_sessionmaker(
 
 
 # FastAPI 依赖：获取一个异步数据库会话
-async def get_session() -> AsyncSession:
+async def get_session() -> AsyncGenerator[AsyncSession | Any, Any]:
     """
     异步上下文管理器，用于获取数据库会话
     
